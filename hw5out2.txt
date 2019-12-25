@@ -1,0 +1,24 @@
+AddEvent 102017 BirthdayParty
+AddEvent 102619 PianoRecital
+AddEvent 102316 SoccerPractice
+AddEvent 102007 FishingTrip
+AddEvent 103015 PumpkinCarving
+AddEvent 103100 Halloween
+AddEvent 112812 Thanksgiving
+AddEvent 122500 Christmas
+PrintSkipList
+(S3) 122500:Christmas
+(S2) 102007:FishingTrip 122500:Christmas
+(S1) 102007:FishingTrip 102619:PianoRecital 103100:Halloween 122500:Christmas
+(S0) 102007:FishingTrip 102017:BirthdayParty 102316:SoccerPractice 102619:PianoRecital 103015:PumpkinCarving 103100:Halloween 112812:Thanksgiving 122500:Christmas
+GetEventsForOneDay 1020 102007:FishingTrip 102017:BirthdayParty
+GetEventsBetweenTimes 102500 110100 102619:PianoRecital 103015:PumpkinCarving 103100:Halloween
+GetEventsForTheRestOfTheDay 102610 102619:PianoRecital
+CancelEvent 103016 NoEventError
+CancelEvent 103015 PumpkinCarving
+AddEvent 103012 VisitingGrandma
+PrintSkipList
+(S3) 122500:Christmas
+(S2) 102007:FishingTrip 122500:Christmas
+(S1) 102007:FishingTrip 102619:PianoRecital 103100:Halloween 122500:Christmas
+(S0) 102007:FishingTrip 102017:BirthdayParty 102316:SoccerPractice 102619:PianoRecital 103012:VisitingGrandma 103100:Halloween 112812:Thanksgiving 122500:Christmas

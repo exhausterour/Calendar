@@ -1,0 +1,38 @@
+AddEvent 051004 summer
+AddEvent 101400 fallBreak
+AddEvent 031200 springBreak
+AddEvent 092612 careerFair
+AddEvent 051004 final ExistingEventError:summer
+PrintSkipList
+(S3) empty
+(S2) 092612:careerFair
+(S1) 092612:careerFair 101400:fallBreak
+(S0) 031200:springBreak 051004:summer 092612:careerFair 101400:fallBreak
+GetEvent 092611 none
+GetEvent 092612 careerFair
+GetEvent 031200 springBreak
+GetEventsBetweenTimes 030000 031100 none
+GetEventsBetweenTimes 030000 101400 031200:springBreak 051004:summer 092612:careerFair 101400:fallBreak
+CancelEvent 031200 springBreak
+CancelEvent 092612 careerFair
+CancelEvent 101400 fallBreak
+CancelEvent 050913 NoEventError
+CancelEvent 051004 summer
+CancelEvent 010101 NoEventError
+PrintSkipList
+(S0) empty
+AddEvent 110513 helpdesk
+AddEvent 110514 helpdesk
+AddEvent 110515 lab
+AddEvent 110512 lunch
+AddEvent 112818 thanksgiving
+AddEvent 110404 programming
+PrintSkipList
+(S4) empty
+(S3) 110512:lunch
+(S2) 110512:lunch 110514:helpdesk 112818:thanksgiving
+(S1) 110512:lunch 110514:helpdesk 112818:thanksgiving
+(S0) 110404:programming 110512:lunch 110513:helpdesk 110514:helpdesk 110515:lab 112818:thanksgiving
+GetEventsForOneDay 1105 110512:lunch 110513:helpdesk 110514:helpdesk 110515:lab
+GetEventsForTheRestOfTheDay 110514 110514:helpdesk 110515:lab
+GetEventsFromEarlierInTheDay 110520 110512:lunch 110513:helpdesk 110514:helpdesk 110515:lab
